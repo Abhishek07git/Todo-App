@@ -1,12 +1,45 @@
 # React + Vite + Tailwind CSS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Installing Tailwind CSS as a Vite plugin is the most seamless way to integrate it with frameworks like Laravel, SvelteKit, React Router, Nuxt, and SolidJS.
 
-Currently, two official plugins are available:
+01
+Create your project
+Start by creating a new Vite project if you don’t have one set up already. The most common approach is to use Create Vite.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Terminal
+npm create vite@latest my-project
+cd my-project
 
-## Expanding the ESLint configuration
+02
+Install Tailwind CSS
+Install tailwindcss and @tailwindcss/vite via npm.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Terminal
+npm install tailwindcss @tailwindcss/vite
+
+03
+Configure the Vite plugin
+Add the @tailwindcss/vite plugin to your Vite configuration.
+
+vite.config.ts
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
+export default defineConfig({
+  plugins: [
+    tailwindcss(),
+  ],
+})
+
+04
+Import Tailwind CSS
+Add an @import to your CSS file that imports Tailwind CSS.
+
+CSS
+@import "tailwindcss";
+
+05
+Start your build process
+Run your build process with npm run dev or whatever command is configured in your package.json file.
+
+Terminal
+npm run dev
